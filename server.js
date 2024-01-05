@@ -7,7 +7,7 @@ var cors_proxy = require('cors-anywhere');
 cors_proxy.createServer({
     originWhitelist: ['https://portal.mot.gov.ps'], // Allow all origins
     requireHeader: ['origin', 'x-requested-with'],
-    removeHeaders: ['cookie', 'cookie2']
+	removeHeaders: ['origin', 'referer']
 }).listen(port, host, function() {
     console.log('Running CORS Anywhere on ' + host + ':' + port);
 });
